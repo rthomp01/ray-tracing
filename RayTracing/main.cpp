@@ -53,7 +53,7 @@ int main()
 	float R = cos(3.14 / 4);
 	list[0] = new sphere(vec3(-R, 0, -1), R, new lambertian(vec3(0, 0, 1)));
 	list[1] = new sphere(vec3(R, 0, -1), R, new lambertian(vec3(1, 0, 0)));
-	list[2] = new sphere(vec3(R, 0, -1), R, new (vec3(1, 0, 0)));
+	list[2] = new sphere(vec3(R, 0, -1), R, new lambertian(vec3(1, 0, 0)));
 	list[3] = new sphere(vec3(R, 0, -1), R, new lambertian(vec3(1, 0, 0)));
 
 	hitable *world = new hitable_list(list, 4);
