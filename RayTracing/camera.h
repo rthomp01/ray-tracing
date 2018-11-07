@@ -18,7 +18,6 @@ public:
 		lower_left_corner = origin - half_width * u - half_height * v - w;
 		horizontal = 2 * half_width * u;
 		vertical = 2 * half_height * v;
-
 	}
 
 	ray get_ray(float u, float v) { return ray(origin, lower_left_corner + u * horizontal + v * vertical - origin); }
