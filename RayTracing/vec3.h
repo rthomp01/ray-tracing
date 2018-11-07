@@ -37,7 +37,6 @@ public:
 	float e[3];
 };
 
-
 inline std::istream& operator>>(std::istream &is, vec3 &t)
 {
 	is >> t.e[0] >> t.e[1] >> t.e[2];
@@ -155,3 +154,17 @@ inline vec3 unit_vector(vec3 v) {
 	return v / v.length();
 }
 
+float random_value()
+{
+	return rand() / double(RAND_MAX);
+}
+
+vec3 random_in_unit_sphere()
+{
+	vec3 p;
+	do
+	{
+		p = 2.0 * vec3(random_value(), random_value(), random_value()) - vec3(1, 1, 1);
+	} while (p.squared_length() >= 1.0);
+	return p;
+}
